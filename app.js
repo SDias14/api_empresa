@@ -9,6 +9,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
+app.use(express.static(path.join(__dirname, 'public'))); // this middleware allows us to serve static files such as images, CSS files, and JavaScript files
+
 app.set('views', path.join(__dirname, 'src/views'));
 app.set('view engine', 'ejs');
 
